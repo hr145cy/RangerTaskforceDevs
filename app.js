@@ -629,3 +629,24 @@ const RangerOpsPlanner = () => {
                 </div>
               </div>
             </div>
+<div style={{ borderTop: '1px solid #334155', paddingTop: '1rem' }}>
+              <h3 style={{ fontWeight: '600', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                💬 Comments ({selectedCard.comments})
+              </h3>
+              <textarea
+                placeholder="Add a comment..."
+                style={{ ...styles.textarea, marginBottom: '0.5rem' }}
+                rows="3"
+              />
+              <button style={styles.button} className="button">
+                Post Comment
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default RangerOpsPlanner;
