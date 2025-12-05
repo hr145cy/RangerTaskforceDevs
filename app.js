@@ -554,3 +554,78 @@ const RangerOpsPlanner = () => {
                       style={styles.textarea}
                       rows="2"
                     />
+                         <div style={{ display: 'flex', gap: '0.5rem' }}>
+                      <button onClick={() => addCard(list.id)} style={styles.button} className="button">
+                        Add Card
+                      </button>
+                      <button onClick={() => setShowNewCard(null)} style={styles.buttonSecondary} className="button-secondary">
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <button onClick={() => setShowNewCard(list.id)} style={styles.addButton} className="add-button">
+                    ➕ <span>Add a card</span>
+                  </button>
+                )}
+              </div>
+
+              <div style={styles.listFooter}></div>
+            </div>
+          ))}
+
+          {showNewList ? (
+            <div style={{ ...styles.list, background: 'rgba(30, 41, 59, 0.5)', border: '1px solid #334155', borderRadius: '0.75rem', padding: '1rem' }}>
+              <input
+                type="text"
+                placeholder="List name..."
+                value={newListName}
+                onChange={(e) => setNewListName(e.target.value)}
+                style={styles.input}
+                autoFocus
+              />
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <button onClick={addList} style={styles.button} className="button">
+                  Add List
+                </button>
+                <button onClick={() => setShowNewList(false)} style={styles.buttonSecondary} className="button-secondary">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={() => setShowNewList(true)}
+              style={{ ...styles.addButton, minWidth: '320px', border: '2px dashed #334155' }}
+              className="add-button"
+            >
+              ➕ <span style={{ fontWeight: '500' }}>Add another list</span>
+            </button>
+          )}
+        </div>
+      </main>
+
+      {/* Card Detail Modal */}
+      {selectedCard && (
+        <div style={styles.modal} onClick={() => setSelectedCard(null)}>
+          <div style={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem' }}>
+              <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: 0 }}>{selectedCard.title}</h2>
+              <button onClick={() => setSelectedCard(null)} style={{ background: 'transparent', border: 'none', color: '#94a3b8', fontSize: '1.5rem', cursor: 'pointer' }}>
+                ✕
+              </button>
+            </div>
+            <p style={{ color: '#cbd5e1', marginBottom: '1.5rem' }}>{selectedCard.description}</p>
+            
+            <div style={{ marginBottom: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <span style={{ color: '#94a3b8' }}>🏷️ Labels:</span>
+                <div style={styles.labels}>
+                  {selectedCard.labels.map((label, i) => (
+                    <span key={i} style={{ ...styles.label, background: labelColors[label] }}>
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
