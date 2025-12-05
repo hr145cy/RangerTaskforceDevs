@@ -348,4 +348,72 @@ const RangerOpsPlanner = () => {
       fontSize: '0.875rem',
       transition: 'background 0.2s ease'
     },
+    input: {
+      width: '100%',
+      padding: '0.5rem 0.75rem',
+      background: '#475569',
+      border: '1px solid #64748b',
+      borderRadius: '0.5rem',
+      color: 'white',
+      fontSize: '0.875rem',
+      outline: 'none',
+      marginBottom: '0.5rem'
+    },
+    textarea: {
+      width: '100%',
+      padding: '0.5rem 0.75rem',
+      background: '#475569',
+      border: '1px solid #64748b',
+      borderRadius: '0.5rem',
+      color: 'white',
+      fontSize: '0.875rem',
+      outline: 'none',
+      marginBottom: '0.5rem',
+      resize: 'none',
+      fontFamily: 'inherit'
+    },
+    addButton: {
+      width: '100%',
+      background: 'rgba(51, 65, 85, 0.5)',
+      border: '1px dashed #475569',
+      borderRadius: '0.5rem',
+      padding: '0.75rem',
+      color: '#94a3b8',
+      cursor: 'pointer',
+      fontSize: '0.875rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '0.5rem',
+      transition: 'all 0.2s ease'
+    },
+    modal: {
+      position: 'fixed',
+      inset: 0,
+      background: 'rgba(0, 0, 0, 0.5)',
+      backdropFilter: 'blur(4px)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 50,
+      padding: '1.5rem'
+    },
+    modalContent: {
+      background: '#1e293b',
+      borderRadius: '0.75rem',
+      border: '1px solid #334155',
+      maxWidth: '42rem',
+      width: '100%',
+      padding: '1.5rem'
+    },
+    deleteButton: {
+      background: 'transparent',
+      border: 'none',
+      color: '#ef4444',
+      cursor: 'pointer',
+      fontSize: '1rem',
+      opacity: 0,
+      transition: 'opacity 0.2s ease'
+    }
+  };
           
