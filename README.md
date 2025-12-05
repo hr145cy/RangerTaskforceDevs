@@ -14,19 +14,7 @@ This project utilizes a modern, robust, full-stack architecture optimized for re
   ~ Database >> MongoDB >> Spring Data MongoDB >> Flexible, non-relational storage perfect for document-based structures like boards, lists, and cards.
 
 _____________________________________________________________________________________________________________________________________________________________________
-Project Structure
 
-rangers-ops-planner/
-├── backend-springboot/   # Spring Boot application (Port 8080)
-│   ├── src/main/java/com/rangers/...
-│   ├── src/main/resources/application.properties
-│   └── pom.xml
-└── frontend-react/       # React application (Port 3000)
-    ├── src/components/...
-    ├── src/services/WebSocketService.js
-    └── package.json
-
-____________________________________________________________________________________________________________________________________________________________________
 1. Backend Setup
    Navigate to the backend-springboot directory.
 
