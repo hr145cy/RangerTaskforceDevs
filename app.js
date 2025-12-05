@@ -416,4 +416,85 @@ const RangerOpsPlanner = () => {
       transition: 'opacity 0.2s ease'
     }
   };
+
+  return (
+    <div style={styles.container}>
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+        .card:hover { border-color: #f97316; box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2); }
+        .card:hover .delete-btn { opacity: 1; }
+        .add-button:hover { background: rgba(51, 65, 85, 0.7); color: white; }
+        .button:hover { background: #ea580c; }
+        .button-secondary:hover { background: #64748b; }
+        input:focus, textarea:focus { border-color: #f97316; }
+      `}</style>
+
+      {/* Header */}
+      <header style={styles.header}>
+        <div style={styles.headerContent}>
+          <div style={styles.logo}>
+            <div style={styles.logoIcon}>
+              <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                <path d="M12 2L2 7v10c0 5.5 3.8 10.7 10 12 6.2-1.3 10-6.5 10-12V7l-10-5zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+              </svg>
+            </div>
+            <div>
+              <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: 0 }}>RANGER OPS PLANNER</h1>
+              <p style={{ fontSize: '0.875rem', color: '#94a3b8', margin: 0 }}>{activeBoard.name}</p>
+            </div>
+          </div>
+
+          <div style={styles.searchBar}>
+            <input
+              type="text"
+              placeholder="Search cards..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={styles.searchInput}
+            />
+          </div>
+
+          <div style={styles.onlineUsers}>
+            <div style={styles.userAvatars}>
+              {onlineUsers.map((user, i) => (
+                <div key={i} style={styles.avatar} title={user}>
+                  {user.slice(-2)}
+                </div>
+              ))}
+            </div>
+            <div style={styles.onlineStatus}>
+              <div style={styles.onlineDot}></div>
+              <span>{onlineUsers.length} online</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Board */}
+      <main style={styles.main}>
+        <div style={styles.board}>
+          {filteredLists.map(list => (
+            <div key={list.id} style={styles.list} onDragOver={handleDragOver} onDrop={() => handleDrop(list.id)}>
+              <div style={styles.listHeader}>
+                <div style={styles.listTitle}>
+                  <h3 style={{ fontSize: '1.125rem', fontWeight: '600', margin: 0 }}>{list.name}</h3>
+                  <span style={{ background: '#334155', padding: '0.25rem 0.5rem', borderRadius: '0.25rem', fontSize: '0.875rem' }}>
+                    {list.cards.length}
+                  </span>
+                </div>
+              </div>
+
+              <div style={styles.listBody}>
+                {list.cards.map(card => (
+                  <div
+                    key={card.id}
+                    className="card"
+                    draggable
+                    onDragStart={() => handleDragStart(card, list.id)}
+                    onClick={() => setSelectedCard(card)}
+                    style={styles.card}
+                  >
           
