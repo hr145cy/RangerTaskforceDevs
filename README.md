@@ -8,10 +8,9 @@ ________________________________________________________________________________
 Technology Stack: 
 
 This project utilizes a modern, robust, full-stack architecture optimized for real-time performance.
-  ~ Frontend >>	React.js >> styled-components, react-beautiful-dnd, @stomp/stompjs >> Dynamic UI and drag-and-drop functionality with a unique tactical aesthetic.
+  
   ~ Real-time >> Spring WebSockets >> STOMP Protocol >> Secure and reliable bidirectional communication for immediate collaboration.
   ~ Backend >> Spring Boot (Java) >> REST APIs, Service Layer >> Robust, scalable mission logic and data handling.
-  ~ Database >> MongoDB >> Spring Data MongoDB >> Flexible, non-relational storage perfect for document-based structures like boards, lists, and cards.
 
 _____________________________________________________________________________________________________________________________________________________________________
 
@@ -25,25 +24,3 @@ Run the application:
     ./mvnw spring-boot:run
     
 The server will start on http://localhost:8080.
-
-
-2. Frontend Setup
-   Navigate to the frontend-react directory.
-
-Install dependencies:
-npm install
-
-Start the React application:
-npm start
-
-The frontend will open automatically on http://localhost:3000.
-
-____________________________________________________________________________________________________________________________________________________________________
-
-Brownie Points
-
-Board Analytics: Implement metrics to track mission efficiency (e.g., average time cards spend in "In Progress").
-
-Export as JSON: Feature to export entire board data for archiving or backup.
-
-Authentication: Integrate Spring Security for user login and role-based access control.
