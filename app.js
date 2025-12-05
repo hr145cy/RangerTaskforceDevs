@@ -168,4 +168,63 @@ const RangerOpsPlanner = () => {
       alignItems: 'center',
       justifyContent: 'space-between'
     },
+    logo: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '1rem'
+    },
+    logoIcon: {
+      background: 'linear-gradient(135deg, #f97316 0%, #dc2626 100%)',
+      padding: '0.5rem',
+      borderRadius: '0.5rem',
+      width: '50px',
+      height: '50px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    searchBar: {
+      flex: '1',
+      maxWidth: '500px',
+      margin: '0 2rem'
+    },
+    searchInput: {
+      width: '100%',
+      padding: '0.5rem 1rem 0.5rem 2.5rem',
+      background: 'rgba(51, 65, 85, 0.5)',
+      border: '1px solid #475569',
+      borderRadius: '0.5rem',
+      color: 'white',
+      fontSize: '0.875rem',
+      outline: 'none'
+    },
+    onlineUsers: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.75rem'
+    },
+    userAvatars: {
+      display: 'flex',
+      marginLeft: '-0.5rem'
+    },
+    avatar: {
+      width: '40px',
+      height: '40px',
+      borderRadius: '50%',
+      background: 'linear-gradient(135deg, #fb923c 0%, #ef4444 100%)',
+      border: '2px solid #1e293b',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '0.75rem',
+      fontWeight: 'bold',
+      marginLeft: '-0.5rem'
+    },
+    onlineStatus: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.25rem',
+      fontSize: '0.875rem',
+      color: '#94a3b8'
+    },
           
