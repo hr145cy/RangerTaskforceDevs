@@ -68,4 +68,104 @@ const RangerOpsPlanner = () => {
           cards: list.cards.filter(c => c.id !== draggedCard.id)
         };
       }
+      if (list.id === targetListId) {
+        return {
+          ...list,
+          cards: [...list.cards, draggedCard]
+        };
+      }
+      return list;
+    });
+
+    setActiveBoard({ ...activeBoard, lists: newLists });
+    setDraggedCard(null);
+    setDraggedFromList(null);
+  };
+
+  const addCard = (listId) => {
+    if (!newCardTitle.trim()) return;
+
+    const newCard = {
+      id: Date.now(),
+      title: newCardTitle,
+      description: newCardDesc,
+      comments: 0,
+      labels: [],
+      attachments: 0
+    };
+
+    const newLists = activeBoard.lists.map(list => {
+      if (list.id === listId) {
+        return { ...list, cards: [...list.cards, newCard] };
+      }
+      return list;
+    });
+
+    setActiveBoard({ ...activeBoard, lists: newLists });
+    setNewCardTitle('');
+    setNewCardDesc('');
+    setShowNewCard(null);
+  };
+
+  const addList = () => {
+    if (!newListName.trim()) return;
+
+    const newList = {
+      id: Date.now(),
+      name: newListName,
+      cards: []
+    };
+
+    setActiveBoard({
+      ...activeBoard,
+      lists: [...activeBoard.lists, newList]
+    });
+    setNewListName('');
+    setShowNewList(false);
+  };
+
+  const deleteCard = (listId, cardId) => {
+    const newLists = activeBoard.lists.map(list => {
+      if (list.id === listId) {
+        return {
+          ...list,
+          cards: list.cards.filter(c => c.id !== cardId)
+        };
+      }
+      return list;
+    });
+    setActiveBoard({ ...activeBoard, lists: newLists });
+  };
+
+  const filteredLists = activeBoard.lists.map(list => ({
+    ...list,
+    cards: list.cards.filter(card =>
+      card.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      card.description.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  }));
+
+  const styles = {
+    container: {
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
+      color: 'white',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    },
+    header: {
+      background: 'rgba(30, 41, 59, 0.5)',
+      backdropFilter: 'blur(10px)',
+      borderBottom: '1px solid #334155',
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      padding: '1rem 1.5rem'
+    },
+    headerContent: {
+      maxWidth: '1800px',
+      margin: '0 auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    },
           
