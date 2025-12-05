@@ -47,3 +47,10 @@ Board Analytics: Implement metrics to track mission efficiency (e.g., average ti
 Export as JSON: Feature to export entire board data for archiving or backup.
 
 Authentication: Integrate Spring Security for user login and role-based access control.
+
+____________________________________________________________________________________________________________________________________________________________________
+
+Now to move on to the code/commits for the frontend, backend and database, I would suggest you to change the branch from 
+      " main >> Frontend/Backend/Database "
+
+where you should find the commits for the file our project deal with(and the code too).
