@@ -497,4 +497,60 @@ const RangerOpsPlanner = () => {
                     onClick={() => setSelectedCard(card)}
                     style={styles.card}
                   >
-          
+          <div style={styles.cardTitle}>
+                      <span style={{ flex: 1 }}>{card.title}</span>
+                      <button
+                        className="delete-btn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          deleteCard(list.id, card.id);
+                        }}
+                        style={styles.deleteButton}
+                      >
+                        🗑️
+                      </button>
+                    </div>
+                    <p style={styles.cardDesc}>{card.description}</p>
+
+                    {card.labels.length > 0 && (
+                      <div style={styles.labels}>
+                        {card.labels.map((label, i) => (
+                          <span key={i} style={{ ...styles.label, background: labelColors[label] }}>
+                            {label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <div style={styles.cardFooter}>
+                      {card.comments > 0 && (
+                        <div style={styles.cardIcon}>
+                          💬 <span>{card.comments}</span>
+                        </div>
+                      )}
+                      {card.attachments > 0 && (
+                        <div style={styles.cardIcon}>
+                          📎 <span>{card.attachments}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {showNewCard === list.id ? (
+                  <div style={{ background: '#334155', borderRadius: '0.5rem', padding: '0.75rem' }}>
+                    <input
+                      type="text"
+                      placeholder="Card title..."
+                      value={newCardTitle}
+                      onChange={(e) => setNewCardTitle(e.target.value)}
+                      style={styles.input}
+                      autoFocus
+                    />
+                    <textarea
+                      placeholder="Description..."
+                      value={newCardDesc}
+                      onChange={(e) => setNewCardDesc(e.target.value)}
+                      style={styles.textarea}
+                      rows="2"
+                    />
