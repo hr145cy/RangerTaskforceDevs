@@ -299,4 +299,53 @@ const RangerOpsPlanner = () => {
       justifyContent: 'space-between',
       alignItems: 'start'
     },
+    cardDesc: {
+      color: '#94a3b8',
+      fontSize: '0.75rem',
+      marginBottom: '0.75rem'
+    },
+    labels: {
+      display: 'flex',
+      gap: '0.25rem',
+      marginBottom: '0.75rem',
+      flexWrap: 'wrap'
+    },
+    label: {
+      padding: '0.25rem 0.5rem',
+      borderRadius: '0.25rem',
+      fontSize: '0.7rem',
+      fontWeight: '500'
+    },
+    cardFooter: {
+      display: 'flex',
+      gap: '0.75rem',
+      fontSize: '0.75rem',
+      color: '#94a3b8'
+    },
+    cardIcon: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.25rem'
+    },
+    button: {
+      background: '#f97316',
+      border: 'none',
+      borderRadius: '0.5rem',
+      padding: '0.5rem 1rem',
+      color: 'white',
+      fontWeight: '500',
+      cursor: 'pointer',
+      fontSize: '0.875rem',
+      transition: 'background 0.2s ease'
+    },
+    buttonSecondary: {
+      background: '#475569',
+      border: 'none',
+      borderRadius: '0.5rem',
+      padding: '0.5rem 1rem',
+      color: 'white',
+      cursor: 'pointer',
+      fontSize: '0.875rem',
+      transition: 'background 0.2s ease'
+    },
           
