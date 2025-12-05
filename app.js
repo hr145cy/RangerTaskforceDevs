@@ -227,4 +227,76 @@ const RangerOpsPlanner = () => {
       fontSize: '0.875rem',
       color: '#94a3b8'
     },
+     onlineDot: {
+      width: '8px',
+      height: '8px',
+      background: '#22c55e',
+      borderRadius: '50%',
+      animation: 'pulse 2s infinite'
+    },
+    main: {
+      maxWidth: '1800px',
+      margin: '0 auto',
+      padding: '1.5rem'
+    },
+    board: {
+      display: 'flex',
+      gap: '1.5rem',
+      overflowX: 'auto',
+      paddingBottom: '1.5rem'
+    },
+    list: {
+      minWidth: '320px',
+      maxWidth: '320px',
+      flexShrink: 0
+    },
+    listHeader: {
+      background: 'rgba(30, 41, 59, 0.5)',
+      backdropFilter: 'blur(10px)',
+      border: '1px solid #334155',
+      borderRadius: '0.75rem 0.75rem 0 0',
+      padding: '1rem'
+    },
+    listTitle: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: '0.75rem'
+    },
+    listBody: {
+      background: 'rgba(30, 41, 59, 0.3)',
+      backdropFilter: 'blur(10px)',
+      border: '1px solid #334155',
+      borderTop: 'none',
+      borderBottom: 'none',
+      padding: '0.75rem',
+      minHeight: '200px',
+      maxHeight: 'calc(100vh - 300px)',
+      overflowY: 'auto'
+    },
+    listFooter: {
+      background: 'rgba(30, 41, 59, 0.5)',
+      backdropFilter: 'blur(10px)',
+      border: '1px solid #334155',
+      borderRadius: '0 0 0.75rem 0.75rem',
+      height: '0.5rem'
+    },
+    card: {
+      background: 'rgba(51, 65, 85, 0.5)',
+      backdropFilter: 'blur(10px)',
+      border: '1px solid #475569',
+      borderRadius: '0.5rem',
+      padding: '1rem',
+      marginBottom: '0.75rem',
+      cursor: 'move',
+      transition: 'all 0.2s ease'
+    },
+    cardTitle: {
+      fontWeight: '500',
+      fontSize: '0.875rem',
+      marginBottom: '0.5rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'start'
+    },
           
